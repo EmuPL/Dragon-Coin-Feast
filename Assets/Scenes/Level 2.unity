@@ -927,9 +927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1beef05a57caa4792094294099f54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: {fileID: 1677025485}
   Seconds: 30
   DeductingTime: 0
+  time: {fileID: 1677025485}
   fadeOut: {fileID: 523047876}
   timeUpText: {fileID: 1934641915}
   player: {fileID: 1167685497}
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae1e1bb7d6bacb459d4333507b5e7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDragon: {fileID: 1878818083}
+  controller: {fileID: 1167685503}
 --- !u!23 &1167685500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6573,11 +6573,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6463857265499394490, guid: efe83d351c5e0c245b8df0ab47d64ccf, type: 3}
   m_PrefabInstance: {fileID: 1092599883}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1878818083 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1674130526759142, guid: 6ff0cd15d1a2a2942b6bb5159b2a0b51, type: 3}
-  m_PrefabInstance: {fileID: 725980537}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1878818084 stripped
 Transform:

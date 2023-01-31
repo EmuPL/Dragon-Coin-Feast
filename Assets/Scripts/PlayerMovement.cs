@@ -2,46 +2,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject playerDragon;
-    private float moveSpeed = 2.5f;
+    [SerializeField] private CharacterController controller;
+    private float playerSpeed = 3.0f;
 
-    private void Update()
+
+    void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if (move != Vector3.zero)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 270, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 90, 0);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.back * Time.deltaTime * moveSpeed);
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
-        {
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 45, 0);
-        }
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
-        {
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 135, 0);
-        }
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
-        {
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 225, 0);
-        }
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
-        {
-            playerDragon.transform.localRotation = Quaternion.Euler(0, 315, 0);
+            gameObject.transform.forward = move;
         }
     }
 }
